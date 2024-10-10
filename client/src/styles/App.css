@@ -1,0 +1,31 @@
+.app {
+  text-align: center;
+}
+
+.app-header {
+  background-color: #f9f9f9;
+  padding: 20px;
+  display: flex;
+  justify-content: center; /* Centraliza o cabeçalho */
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.app-header h1 {
+  margin: 0; /* Remove a margem do título */
+}
+
+.header-icons {
+  position: absolute; /* Posiciona os ícones de forma absoluta */
+  right: 20px; /* Ajusta a distância da borda direita */
+}
+
+.header-icons a {
+  margin: 0 10px;
+  font-size: 24px;
+  color: #584160;
+}
+
+.header-icons a:hover {
+  color: #71667d;
+}

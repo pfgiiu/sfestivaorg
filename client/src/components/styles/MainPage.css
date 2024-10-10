@@ -1,0 +1,40 @@
+.main-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px 20px;
+    background-color: #584160; /* Cor do cabeçalho */
+    color: #ffffff; /* Cor do texto */
+  }
+  
+  .header h1 {
+    margin: 0;
+  }
+  
+  .contact-icons a {
+    color: #ffffff;
+    margin-left: 15px;
+  }
+  
+  .content {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .footer {
+    margin-top: auto;
+    padding: 20px;
+    background-color: #2a2530; /* Cor do rodapé */
+    color: #cbc9be; /* Cor do texto do rodapé */
+    width: 100%;
+  }
+  
