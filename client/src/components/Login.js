@@ -5,9 +5,30 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Login realizado:', { email, password });
+    
+    try {
+      const response = await fetch('http://localhost:5000/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (response.ok) {
+        const message = await response.text();
+        console.log('Login realizado com sucesso:', message);
+        // Redirecionar para a página principal
+        window.location.href = '/main'; // Redireciona para a página principal
+      } else {
+        const error = await response.text();
+        console.error('Erro ao fazer login:', error);
+      }
+    } catch (error) {
+      console.error('Erro ao fazer login:', error);
+    }
   };
 
   return (

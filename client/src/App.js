@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
 import './styles/App.css';
-import MainPage from './components/MainPage'; // Importar a nova página
+import MainPage from './components/MainPage';
 
 const App = () => {
   return (
@@ -24,10 +24,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/main" element={<MainPage />} /> {/* Rota para a página principal */}
-
+          <Route path="/main" element={<MainPage />} />
         </Routes>
       </div>
     </Router>

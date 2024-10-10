@@ -1,23 +1,22 @@
-// Rota para login de usuário
-router.post('/login', async (req, res) => {
-    const { email, password } = req.body;
-  
-    try {
-      const user = await User.findOne({ email });
-      if (!user) {
-        return res.status(401).send('Usuário não encontrado');
-      }
-  
-      const isMatch = await bcrypt.compare(password, user.password);
-      if (!isMatch) {
-        return res.status(401).send('Senha incorreta');
-      }
-  
-      // Se o login for bem-sucedido
-      res.status(200).send('Login realizado com sucesso');
-    } catch (error) {
-      console.error('Erro ao fazer login:', error);
-      res.status(500).send('Erro ao fazer login');
-    }
-  });
-  
+// models/User.js
+const mongoose = require('mongoose');
+
+const userSchema = new mongoose.Schema({
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  // Remova o campo 'code' se não for mais necessário
+  // code: {
+  //   type: String,
+  //   required: true
+  // }
+});
+
+const User = mongoose.model('User', userSchema);
+module.exports = User;
